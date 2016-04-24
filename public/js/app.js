@@ -11,3 +11,19 @@ if('serviceWorker' in navigator) {
 }
 
 console.log(navigator.serviceWorker.controller);
+
+(function () {
+    let i = 0;
+    
+    function updateCount() {
+        document.getElementById('count').innerText = i;
+    }
+    
+    updateCount();
+    
+    const button = document.getElementById('increment');
+    button.addEventListener('click', (event) => {
+            i++;
+            updateCount();
+        });
+})();
